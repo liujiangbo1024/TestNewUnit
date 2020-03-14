@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * @Description  :  从外面读取内容
+ * @Description  :  从yaml文件外面读取内容
  * @author       :  liujiangbo
  * @Creation Date:  2019-11-14 15:32
  */
@@ -78,7 +78,7 @@ System.out.println(FileUtils.readLines(new File("D:/a/b/cxyapi.txt"), "UTF-8"));
         ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
        // HashMap<Object, Object> demo=mapper.readValue(this.getClass().getResourceAsStream("appium/TestSearch.yaml"), new TypeReference<HashMap<Object,Object>>(){});
         Object[][] demo=mapper.readValue(this.getClass().getResourceAsStream("/appium/testcase/TestSearch.yaml"),Object[][].class);
-        System.out.println(demo);
+        System.out.println(JSON.toJSONString(demo));
         System.out.println(demo.length);
         System.out.println(demo[0].toString());
         System.out.println(demo[1].length);
